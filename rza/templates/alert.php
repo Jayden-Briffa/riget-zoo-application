@@ -1,0 +1,1 @@
+<div class="alert alert-<?= $alert_type ?> alert-fade show fixed-top pe-none" role="alert"> <?= $alert_text ?> </div>

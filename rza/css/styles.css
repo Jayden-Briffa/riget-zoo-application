@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Indie+Flower&display=swap');
+:root{
+    /* FONTS */
+    --FONT-FAMILY: "Indie Flower";
+    --FONT-FAMILY-H: "Cherry Bomb One";
+    --FONT-SIZE-MULTIPLIER: 1;
+    --FONT-SIZE-MULTIPLIER-H: 1.5;
+
+    /* SPACING */
+    --PADDING-NAV: 0 5vw;
+    --PADDING-MAINSECTION-TOPBOTTOM: 5vh;
+    --PADDING-MAINSECTION-LEFTRIGHT: 20vw;
+    --PADDING-BTN: 5px 10px;
+
+    --PADDING-MAINSECTION:  var(--PADDING-MAINSECTION-TOPBOTTOM) var(--PADDING-MAINSECTION-LEFTRIGHT);
+
+    /* COLORS */ 
+    --YELLOW: #FDCA40;
+    --LIGHTYELLOW: #ffefc5;
+    --GREEN: #2B9F3E;
+    --DARKGREEN: #000703;
+    --DARKERGREEN: #000b04;
+    --BROWN: #4C2B05;
+    --LIGHTBROWN: #ba8548;
+    --DARKBROWN: #3E2100;
+    --GREY: #D9D9D9;
+    --COLOR-TEXT-DARK: black;
+    --COLOR-TEXT-LIGHT: white;
+
+    --COLOR-TEXT: var(--COLOR-TEXT-DARK);
+    --COLOR-TEXT-H: var(--DARKBROWN);
+    --BG-MAIN: #FDFFFB;
+    --COLOR-ERROR: darkred;
+    --COLOR-FORMTEXT: #595C5F;
+    --COLOR-FORMTEXT-GRAYBG: #595C5F;
+    --COLOR-LINK: var(--GREEN);
+    --COLOR-PROMO-CARD: white;
+
+    /* MOTION */
+    --BTN-TRANSFORM: scale(1.1);
+    --BTN-TRANSFORM-LOW: scale(1.05);
+
+    /* SIZING */
+    --HEIGHT-FOOTER: 5vh;
+    --HEIGHT-HEADER: 7vh;
+
+    /* BORDERS */
+    --BORDER-BTN: none;
+}
+
+/* ACCESSIBILITY */
+/* Dark theme */
+body.dark-theme{
+    --BG-MAIN: var(--DARKGREEN);
+    --COLOR-TEXT: var(--COLOR-TEXT-LIGHT);
+    --COLOR-TEXT-H: var(--LIGHTBROWN);
+    --COLOR-ERROR: #ff8080;
+    --COLOR-FORMTEXT: #aeb2b6;
+    --COLOR-PROMO-CARD: var(--LIGHTYELLOW);
+    --BORDER-BTN: 1px solid var(--YELLOW);
+}
+
+/* Font size */
+body.txt-small {
+    --FONT-SIZE-MULTIPLIER: 0.8;
+    --FONT-SIZE-MULTIPLIER-H: 0.8;
+}
+
+body.txt-medium {
+    --FONT-SIZE-MULTIPLIER: 1;
+    --FONT-SIZE-MULTIPLIER-H: 1;
+}
+
+body.txt-large {
+    --FONT-SIZE-MULTIPLIER: 1.5;
+    --FONT-SIZE-MULTIPLIER-H: 1.5;
+}
+
+/* Calculating font sizes dynamically */
+body {
+    --FONT-SIZE: calc(1.4rem * var(--FONT-SIZE-MULTIPLIER));
+    --FONT-SIZE-H1: calc(2.125rem * var(--FONT-SIZE-MULTIPLIER-H));
+    --FONT-SIZE-H2: calc(1.875rem * var(--FONT-SIZE-MULTIPLIER-H));
+    --FONT-SIZE-H3: calc(1.5rem * var(--FONT-SIZE-MULTIPLIER-H));
+    --FONT-SIZE-H4: calc(1.25rem * var(--FONT-SIZE-MULTIPLIER-H));
+    --FONT-SIZE-H5: calc(1.1rem * var(--FONT-SIZE-MULTIPLIER-H));
+    --FONT-SIZE-H6: calc(0.8rem * var(--FONT-SIZE-MULTIPLIER-H));
+}
+
+/* FOR MOBILE DEVICES */
+@media only screen and (max-width: 767px){
+
+}
+
+/* FOR MOBILE AND TABLET DEVICES */
+@media only screen and (max-width: 1024px){
+    :root{
+        --PADDING-MAINSECTION-LEFTRIGHT: 5vw;
+    }
+}
+
+/* FOR TABLET DEVICES */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+
+}
+
+/* FOR DESKTOP DEVICES */
+@media only screen and (min-width: 1024px){
+    :root{
+        --PADDING-NAV: 0 5vw;
+    }
+}
+
+/* STANDARD ELEMENTS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color: var(--COLOR-TEXT-H);
+    font-family: var(--FONT-FAMILY-H);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+h1, .fs-1{
+    font-size: var(--FONT-SIZE-H1);
+}
+
+h2, .fs-2{
+    font-size: var(--FONT-SIZE-H2);
+}
+
+h3, .fs-3{
+    font-size: var(--FONT-SIZE-H3);
+}
+
+h4, .fs-4{
+    font-size: var(--FONT-SIZE-H4);
+}
+
+h5, .fs-5{
+    font-size: var(--FONT-SIZE-H5);
+}
+
+h6, .fs-6{
+    font-size: var(--FONT-SIZE-H6);
+}
+
+a {
+    color: var(--COLOR-LINK);
+}
+
+.btn{
+    color: var(--YELLOW);
+    background-color: var(--BROWN);
+    padding: var(--PADDING-BTN);
+    font-size: var(--FONT-SIZE);
+    border: var(--BORDER-BTN);
+    transition: all 0.2s
+}
+
+.btn:hover{
+    color: var(--COLOR-TEXT-LIGHT);
+    background-color: var(--GREEN);
+
+    transform: var(--BTN-TRANSFORM);
+}
+
+.btn.low-grow:hover{
+    transform: var(--BTN-TRANSFORM-LOW);
+}
+
+.btn.no-grow:hover{
+    transform: none;
+}
+
+
+/* SITE-WIDE TAGS */
+body{
+    color: var(--COLOR-TEXT);
+    font-size: var(--FONT-SIZE);
+    font-family: var(--FONT-FAMILY);
+    min-height: 100vh
+}
+
+header{
+    min-height: var(--HEIGHT-HEADER);
+}
+
+.nav-link{
+    color: var(--COLOR-TEXT-LIGHT);
+}
+
+.navbar-nav .nav-link:hover{
+    color: var(--GREEN);
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.active:hover{
+    color: var(--GREEN);
+    font-weight: 600;
+}
+
+.navbar-logo{
+    max-height: calc(var(--HEIGHT-HEADER) - 1vh);
+}
+
+main{
+    background-color: var(--BG-MAIN);
+    min-height: calc(100vh - var(--HEIGHT-HEADER) - var(--HEIGHT-FOOTER));
+}
+
+footer{
+    min-height: var(--HEIGHT-FOOTER);
+}
+
+/* Center all content and gives standard padding from the screen's edge */
+main > section,
+main > div,
+.main-section {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+
+    padding: var(--PADDING-MAINSECTION);
+}
+
+/* Make the section's background not extend to edge of the screen */
+main > .boxed-content{
+    margin-left: var(--PADDING-MAINSECTION-LEFTRIGHT);
+    margin-right: var(--PADDING-MAINSECTION-LEFTRIGHT);
+    padding: var(--PADDING-MAINSECTION-TOPBOTTOM) 3vw;
+}
+
+.form-error{
+    font-weight: bold;
+    color: var(--COLOR-ERROR);
+}
+
+.hero{
+    height: 400px;
+}
+
+.hero h1{
+    color: var(--COLOR-TEXT-LIGHT)
+}
+
+.hero::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #00000057;
+    line-height: 0;
+    z-index: 2;
+}
+
+.hero-shape-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+}
+
+.hero-shape-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+}
+
+.hero-shape-divider .shape-fill {
+    fill: var(--BG-MAIN);
+}
+
+.bg-tiger{
+    background-image: url('../images/tiger-lying-down.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.alert-fade{
+    animation: alertFade 5s;
+    animation-fill-mode: forwards;
+}
+
+.form-text{
+    color: var(--COLOR-FORMTEXT);
+}
+
+/* UTLILITY CLASSES */
+.border-highlight-red {
+    border: 5px solid red;
+}
+
+.border-brown {
+    border: 2px solid var(--BROWN);
+}
+
+.shadow-dark{
+    box-shadow: 2px 2px 8px black;
+}
+
+.bg-green{
+    background-color: var(--GREEN);
+    color: var(--COLOR-TEXT-LIGHT);
+}
+
+.bg-yellow{
+    background-color: var(--YELLOW);
+    color: var(--COLOR-TEXT-DARK);
+}
+
+.bg-brown{
+    background-color: var(--BROWN);
+    color: var(--COLOR-TEXT-LIGHT);
+}
+
+.bg-darkbrown{
+    background-color: var(--DARKBROWN);
+    color: var(--COLOR-TEXT-LIGHT);
+}
+
+.bg-translucent{
+    background-color: none;
+}
+
+.text-light{
+    color: var(--COLOR-TEXT-LIGHT);
+}
+
+.text-dark-red{
+    color: darkred;
+}
+
+.text-dark-brown{
+    color: var(--DARKBROWN);
+}
+
+.hover-grow{
+    transform: scale(1);
+    transition: all 0.2s;
+}
+
+.hover-grow:hover{
+    transform: scale(1.01);
+    transition: all 0.2s;
+}
+
+/* HOME */
+.home-service-icon{
+    max-width: 200px;
+}
+
+.bg-promo-card{
+    background-color: var(--COLOR-PROMO-CARD);
+}
+
+/* ANIMATIONS */
+@keyframes alertFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
